@@ -39,3 +39,10 @@ def single(id):
         post=post,
         loggedIn=session.get('loggedIn')
     )
+
+
+@bp.route('/users/logout', methods=['POST'])
+def logout():
+    # remove session variables
+    session.clear()
+    return '', 204
